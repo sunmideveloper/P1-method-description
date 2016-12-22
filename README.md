@@ -10,7 +10,7 @@
 
 1.将Demo导入AndroidStudio，其中包含两个项目两个项目，如下图所示：
 
-![Alt SUNMI](https://github.com/sunmideveloper/The-Demo-of-read-card/blob/master/img/2.png) 
+![Alt SUNMI](https://github.com/sunmideveloper/P1-method-description/blob/master/imgs/1.png) 
 
 app和sunmipaytestdemo，前者是P1金融交易相关的服务程序，这里需要开发者先在设备上安装该服务程序，之后商米会将该服务整合到ROM中，后者sunmipaytestdemo包含Demo中功能，开发者可以参照其中的代码完成自己的业务的接入调试。
 
@@ -18,7 +18,7 @@ app和sunmipaytestdemo，前者是P1金融交易相关的服务程序，这里�
 
 3.再将sunmipaytestdemo部署到设备中，运行该项目，界面如下所示：
 
-![Alt SUNMI](https://github.com/sunmideveloper/The-Demo-of-read-card/blob/master/img/2.png) 
+![Alt SUNMI](https://github.com/sunmideveloper/P1-method-description/blob/master/imgs/2.png) 
 
 4.点击上图的"初始化"按钮，看到上面的连接状态变成“已连接”，
 
@@ -28,7 +28,7 @@ app和sunmipaytestdemo，前者是P1金融交易相关的服务程序，这里�
 
 7.点击“检卡”，然后将自己的银行卡按照下面的方式刷卡，注意Demo中设置的识别时间是30秒，所以请在30秒内完成刷卡的动作，完成后界面将提示读卡成功，
 
-![Alt SUNMI](https://github.com/sunmideveloper/The-Demo-of-read-card/blob/master/img/2.png) 
+![Alt SUNMI](https://github.com/sunmideveloper/P1-method-description/blob/master/imgs/3.jpg) 
 
 8.点击“信息”，界面中会显示相关的状态信息。
 
