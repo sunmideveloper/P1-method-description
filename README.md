@@ -18,7 +18,7 @@ app和sunmipaytestdemo，前者是P1金融交易相关的服务程序，这里�
 
 3.再将sunmipaytestdemo部署到设备中，运行该项目，界面如下所示：
 
-[Alt SUNMI](https://github.com/sunmideveloper/The-Demo-of-read-card/blob/master/img/2.png) 
+![Alt SUNMI](https://github.com/sunmideveloper/The-Demo-of-read-card/blob/master/img/2.png) 
 
 4.点击上图的"初始化"按钮，看到上面的连接状态变成“已连接”，
 
@@ -28,7 +28,7 @@ app和sunmipaytestdemo，前者是P1金融交易相关的服务程序，这里�
 
 7.点击“检卡”，然后将自己的银行卡按照下面的方式刷卡，注意Demo中设置的识别时间是30秒，所以请在30秒内完成刷卡的动作，完成后界面将提示读卡成功，
 
-[Alt SUNMI](https://github.com/sunmideveloper/The-Demo-of-read-card/blob/master/img/2.png) 
+![Alt SUNMI](https://github.com/sunmideveloper/The-Demo-of-read-card/blob/master/img/2.png) 
 
 8.点击“信息”，界面中会显示相关的状态信息。
 
@@ -40,27 +40,33 @@ app和sunmipaytestdemo，前者是P1金融交易相关的服务程序，这里�
 
 1.初始化
 可以看到，Demo中MainActivity中的init方法中调用了ConnectPayService类中的connectPayService方法，该方法中的核心代码如下：
+
 ```
 Intent intent = new Intent("sunmi.intent.action.PAY_HARDWARE");
 intent.setPackage("com.sunmi.pay.hardware");
 mContext.bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
-
 ```
+
 以上就是初始化的代码，必须初始化金融支付服务才能完成P1的一系列功能操作。
 
 2.初始化完成后，再看下设置LED灯的代码：
+
 ```
 connectPayService.getDeviceProvide().getBasicProvider().ledStatusOnDevice(1, 0);
 ```
+
 可以看到最终调用的是BasicProvider.aidl中的int ledStatusOnDevice(int ledIndex, int ledStatus)；该方法有两个参数 ：第一个参数：ledIndex为LED索引，设备上有4个LED灯，所以该值范围为1~4；第二个参数：ledStatus为LED状态，1表示LED灭，0表示LED亮；可以参照Demo中的顺序控制LED
 
 3.控制蜂鸣器的代码如下：
+
 ```
 connectPayService.getDeviceProvide().getBasicProvider().buzzerOnDevice(2);
 ```
+
 可以看到最终调用的是BasicProvider.aidl中的int buzzerOnDevice(int times) 方法；方法中的参数为蜂鸣的次数，范围为1~10，具体请查看demo中aidl的代码注释。
 
 4.读卡的代码如下：
+
 ```
 connectPayService.getDeviceProvide().getReadCardProvider().checkCard(CARDTYPE_IC | CARDTYPE_MAG | CARDTYPE_NFC, GENERAL_READER_DEVICE, b, b.length, 30, new ReadCardCallback.Stub(){});
 ```
