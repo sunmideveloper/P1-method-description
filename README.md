@@ -104,3 +104,4 @@ public void onCheckCardCompleted(int var1, int var2, String var3, String var4, M
      }
     }
 ```
+注:以上我们举例说明了P1相关的接口的调用方法，更多的接口功能可以参看aidl文件中的相关方法说明
